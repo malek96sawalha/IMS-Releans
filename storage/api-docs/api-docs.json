@@ -1,0 +1,835 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Your API Title",
+        "description": "Your API Description",
+        "contact": {
+            "name": "Your Name",
+            "email": "you@example.com"
+        },
+        "license": {
+            "name": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+        },
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/notifiactions": {
+            "get": {
+                "tags": [
+                    "notifiactions"
+                ],
+                "summary": "Get all notifiactions",
+                "description": "Endpoint to retrieve a list of all notifications.",
+                "operationId": "8f745e89025722e478ec5d71b7617499",
+                "responses": {
+                    "200": {
+                        "description": "List of notifications"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "notifiactions"
+                ],
+                "summary": "Create a new notifiactions",
+                "description": "Endpoint to create a new notifiactions.",
+                "operationId": "b5214e96148949d7554cf5f6ee12a887",
+                "requestBody": {
+                    "description": "Request Body Description",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "user_id": {
+                                        "description": "The ID of the user receiving the notifiactions",
+                                        "type": "integer"
+                                    },
+                                    "title": {
+                                        "description": "The title of the notification",
+                                        "type": "string"
+                                    },
+                                    "description": {
+                                        "description": "The description of the notification",
+                                        "type": "string"
+                                    },
+                                    "status": {
+                                        "description": "The roles to which the notification is targeted",
+                                        "type": "string"
+                                    },
+                                    "id": {
+                                        "description": "The roles to which the notification is targeted",
+                                        "type": "integer"
+                                    },
+                                    "created_at": {
+                                        "description": "The roles to which the notification is targeted",
+                                        "type": "string",
+                                        "format": "date"
+                                    },
+                                    "updated_at": {
+                                        "description": "The roles to which the notification is targeted",
+                                        "type": "string",
+                                        "format": "date"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Notification created successfully"
+                    },
+                    "400": {
+                        "description": "Bad request, validation failed"
+                    }
+                }
+            }
+        },
+        "/api/notifiactions/{notifiaction_id}": {
+            "put": {
+                "tags": [
+                    "notifiactions"
+                ],
+                "summary": "Update notifiaction details",
+                "description": "Endpoint to update notifiaction details.",
+                "operationId": "ce045169a565162a4bee34f122ee71bb",
+                "parameters": [
+                    {
+                        "name": "notifiaction_id",
+                        "in": "path",
+                        "description": "ID of the notifiaction to update",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Request Body Description",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "user_id": {
+                                        "description": "The ID of the user for whom the notification is intended",
+                                        "type": "integer"
+                                    },
+                                    "title": {
+                                        "description": "The title of the notification",
+                                        "type": "string"
+                                    },
+                                    "description": {
+                                        "description": "The description of the notification",
+                                        "type": "string"
+                                    },
+                                    "status": {
+                                        "description": "The status of the notification",
+                                        "type": "string"
+                                    },
+                                    "created_at": {
+                                        "description": "The creation date and time of the notification",
+                                        "type": "string",
+                                        "format": "date-time"
+                                    },
+                                    "updated_at": {
+                                        "description": "The last update date and time of the notification",
+                                        "type": "string",
+                                        "format": "date-time"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Notification details updated successfully"
+                    },
+                    "400": {
+                        "description": "Bad request, validation failed"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "notifiactions"
+                ],
+                "summary": "Delete a notifiaction",
+                "description": "Endpoint to delete a notification by ID.",
+                "operationId": "bbd596d4e69f411019ae166565e80e29",
+                "parameters": [
+                    {
+                        "name": "notifiaction_id",
+                        "in": "path",
+                        "description": "ID of the notification to delete",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Notification deleted successfully"
+                    },
+                    "404": {
+                        "description": "Notification not found"
+                    }
+                }
+            }
+        },
+        "/api/orders": {
+            "get": {
+                "tags": [
+                    "orders"
+                ],
+                "summary": "Get all orders",
+                "description": "Endpoint to retrieve a list of all orders.",
+                "operationId": "6e2e0d5c90ed4a866d1965de8bca6f24",
+                "responses": {
+                    "200": {
+                        "description": "List of orders"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "orders"
+                ],
+                "summary": "Create a new orders",
+                "description": "Endpoint to create a new orders.",
+                "operationId": "d690d6834318e9b064df441e854de8b9",
+                "requestBody": {
+                    "description": "Request Body Description",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "user_id": {
+                                        "description": "The ID of the user for whom the order is placed",
+                                        "type": "integer"
+                                    },
+                                    "status": {
+                                        "description": "The title of the order",
+                                        "type": "string"
+                                    },
+                                    "total_price": {
+                                        "description": "The description of the order",
+                                        "type": "integer"
+                                    },
+                                    "created_at": {
+                                        "description": "The creation date and time of the order",
+                                        "type": "string",
+                                        "format": "date-time"
+                                    },
+                                    "updated_at": {
+                                        "description": "The last update date and time of the order",
+                                        "type": "string",
+                                        "format": "date-time"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "order created successfully"
+                    },
+                    "400": {
+                        "description": "Bad request, validation failed"
+                    }
+                }
+            }
+        },
+        "/api/orders/{order_id}": {
+            "put": {
+                "tags": [
+                    "orders"
+                ],
+                "summary": "Update order details",
+                "description": "Endpoint to update order details.",
+                "operationId": "d3243d77d764ebfd6d8ae657f386d468",
+                "parameters": [
+                    {
+                        "name": "order_id",
+                        "in": "path",
+                        "description": "ID of the order to update",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Request Body Description",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "user_id": {
+                                        "description": "The ID of the user for whom the order is placed",
+                                        "type": "integer"
+                                    },
+                                    "status": {
+                                        "description": "The title of the order",
+                                        "type": "string"
+                                    },
+                                    "total_price": {
+                                        "description": "The description of the order",
+                                        "type": "integer"
+                                    },
+                                    "created_at": {
+                                        "description": "The creation date and time of the order",
+                                        "type": "string",
+                                        "format": "date-time"
+                                    },
+                                    "updated_at": {
+                                        "description": "The last update date and time of the order",
+                                        "type": "string",
+                                        "format": "date-time"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Notification details updated successfully"
+                    },
+                    "400": {
+                        "description": "Bad request, validation failed"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "orders"
+                ],
+                "summary": "Delete a order",
+                "description": "Endpoint to delete a notification by ID.",
+                "operationId": "c05cd1972f9fba85cff8f18a2a1d8567",
+                "parameters": [
+                    {
+                        "name": "order_id",
+                        "in": "path",
+                        "description": "ID of the order to delete",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Notification deleted successfully"
+                    },
+                    "404": {
+                        "description": "Notification not found"
+                    }
+                }
+            }
+        },
+        "/api/products": {
+            "get": {
+                "tags": [
+                    "products"
+                ],
+                "summary": "Get all products",
+                "description": "Endpoint to retrieve a list of all products.",
+                "operationId": "5c5bbec0ba3ada1a2cbdc47997f9f857",
+                "responses": {
+                    "200": {
+                        "description": "List of products"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "products"
+                ],
+                "summary": "Create a new product",
+                "description": "Endpoint to create a new products.",
+                "operationId": "e8185e307706e2cd84bbcf5171e2f09d",
+                "requestBody": {
+                    "description": "Request Body Description",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "name": {
+                                        "description": "The title of the product",
+                                        "type": "string"
+                                    },
+                                    "description": {
+                                        "description": "The description of the product",
+                                        "type": "text"
+                                    },
+                                    "price": {
+                                        "description": "The price of the product",
+                                        "type": "integer"
+                                    },
+                                    "created_at": {
+                                        "description": "The roles to which the product is targeted",
+                                        "type": "string",
+                                        "format": "date"
+                                    },
+                                    "updated_at": {
+                                        "description": "The roles to which the product is targeted",
+                                        "type": "string",
+                                        "format": "date"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Notification created successfully"
+                    },
+                    "400": {
+                        "description": "Bad request, validation failed"
+                    }
+                }
+            }
+        },
+        "/api/products/{product_id}": {
+            "put": {
+                "tags": [
+                    "products"
+                ],
+                "summary": "Update product details",
+                "description": "Endpoint to update product details.",
+                "operationId": "e3dc107d1eeb91b58436b562af0648b3",
+                "parameters": [
+                    {
+                        "name": "product_id",
+                        "in": "path",
+                        "description": "ID of the product to update",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Request Body Description",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "name": {
+                                        "description": "The title of the product",
+                                        "type": "string"
+                                    },
+                                    "description": {
+                                        "description": "The description of the product",
+                                        "type": "text"
+                                    },
+                                    "price": {
+                                        "description": "The price of the product",
+                                        "type": "integer"
+                                    },
+                                    "created_at": {
+                                        "description": "The roles to which the product is targeted",
+                                        "type": "string",
+                                        "format": "date"
+                                    },
+                                    "updated_at": {
+                                        "description": "The roles to which the product is targeted",
+                                        "type": "string",
+                                        "format": "date"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "product details updated successfully"
+                    },
+                    "400": {
+                        "description": "Bad request, validation failed"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "products"
+                ],
+                "summary": "Delete a product",
+                "description": "Endpoint to delete a product by ID.",
+                "operationId": "1e2ccb4ad3905276818a481e066ba14e",
+                "parameters": [
+                    {
+                        "name": "product_id",
+                        "in": "path",
+                        "description": "ID of the product to delete",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "product deleted successfully"
+                    },
+                    "404": {
+                        "description": "product not found"
+                    }
+                }
+            }
+        },
+        "/api/stocks": {
+            "get": {
+                "tags": [
+                    "stocks"
+                ],
+                "summary": "Get all stocks",
+                "description": "Endpoint to retrieve a list of all stocks.",
+                "operationId": "bd96270b2b6d7a2fb5564fa499f525c7",
+                "responses": {
+                    "200": {
+                        "description": "List of notifications"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "stocks"
+                ],
+                "summary": "Create a new stocks",
+                "description": "Endpoint to create a new notifiactions.",
+                "operationId": "bcd2af84da9c2ee170ade9d263efffb2",
+                "requestBody": {
+                    "description": "Request Body Description",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "product_id": {
+                                        "description": "The ID of the product for which the stock is intended",
+                                        "type": "integer"
+                                    },
+                                    "quantity": {
+                                        "description": "The quantity of the stock",
+                                        "type": "integer"
+                                    },
+                                    "minimum_quantity": {
+                                        "description": "The minimum quantity of the stock",
+                                        "type": "integer"
+                                    },
+                                    "maximum_quantity": {
+                                        "description": "The maximum quantity of the stock",
+                                        "type": "integer"
+                                    },
+                                    "created_at": {
+                                        "description": "The creation date and time of the stock",
+                                        "type": "string",
+                                        "format": "date-time"
+                                    },
+                                    "updated_at": {
+                                        "description": "The last update date and time of the stock",
+                                        "type": "string",
+                                        "format": "date-time"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Notification created successfully"
+                    },
+                    "400": {
+                        "description": "Bad request, validation failed"
+                    }
+                }
+            }
+        },
+        "/api/stocks/{stock_id}": {
+            "put": {
+                "tags": [
+                    "stocks"
+                ],
+                "summary": "Update stock details",
+                "description": "Endpoint to update stock details.",
+                "operationId": "674e38d11418972982dc2246b1f2a584",
+                "parameters": [
+                    {
+                        "name": "stock_id",
+                        "in": "path",
+                        "description": "ID of the stock to update",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Request Body Description",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "product_id": {
+                                        "description": "The ID of the product for which the stock is intended",
+                                        "type": "integer"
+                                    },
+                                    "quantity": {
+                                        "description": "The quantity of the stock",
+                                        "type": "integer"
+                                    },
+                                    "minimum_quantity": {
+                                        "description": "The minimum quantity of the stock",
+                                        "type": "integer"
+                                    },
+                                    "maximum_quantity": {
+                                        "description": "The maximum quantity of the stock",
+                                        "type": "integer"
+                                    },
+                                    "created_at": {
+                                        "description": "The creation date and time of the stock",
+                                        "type": "string",
+                                        "format": "date-time"
+                                    },
+                                    "updated_at": {
+                                        "description": "The last update date and time of the stock",
+                                        "type": "string",
+                                        "format": "date-time"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Notification details updated successfully"
+                    },
+                    "400": {
+                        "description": "Bad request, validation failed"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "stocks"
+                ],
+                "summary": "Delete a stock",
+                "description": "Endpoint to delete a notification by ID.",
+                "operationId": "9c61629e71d6064d809d726a8eee9c3b",
+                "parameters": [
+                    {
+                        "name": "stock_id",
+                        "in": "path",
+                        "description": "ID of the stock to delete",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Notification deleted successfully"
+                    },
+                    "404": {
+                        "description": "Notification not found"
+                    }
+                }
+            }
+        },
+        "/api/users": {
+            "get": {
+                "tags": [
+                    "users"
+                ],
+                "summary": "Get all users",
+                "description": "Endpoint to retrieve a list of all users.",
+                "operationId": "953fbe16ca028c3d65368ea6ce5a1ba4",
+                "responses": {
+                    "200": {
+                        "description": "List of users"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "users"
+                ],
+                "summary": "Create a new users",
+                "description": "Endpoint to create a new users.",
+                "operationId": "592819a0265360b2014512d6dbfaf0e7",
+                "requestBody": {
+                    "description": "Request Body Description",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "name": {
+                                        "description": "The name of the user",
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "description": "The email of the user",
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "description": "The password pf the user account",
+                                        "type": "string"
+                                    },
+                                    "role": {
+                                        "description": "The role of the user",
+                                        "type": "string"
+                                    },
+                                    "id": {
+                                        "description": "The roles to which the notification is targeted",
+                                        "type": "integer"
+                                    },
+                                    "created_at": {
+                                        "description": "The roles to which the notification is targeted",
+                                        "type": "string",
+                                        "format": "date"
+                                    },
+                                    "updated_at": {
+                                        "description": "The roles to which the notification is targeted",
+                                        "type": "string",
+                                        "format": "date"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Notification created successfully"
+                    },
+                    "400": {
+                        "description": "Bad request, validation failed"
+                    }
+                }
+            }
+        },
+        "/api/users/{user_id}": {
+            "put": {
+                "tags": [
+                    "users"
+                ],
+                "summary": "Update user details",
+                "description": "Endpoint to update user details.",
+                "operationId": "c64f78766f4915182147dd62bcc1e3f3",
+                "parameters": [
+                    {
+                        "name": "user_id",
+                        "in": "path",
+                        "description": "ID of the user to update",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Request Body Description",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "name": {
+                                        "description": "The name of the user",
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "description": "The email of the user",
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "description": "The password of the user account",
+                                        "type": "string"
+                                    },
+                                    "role": {
+                                        "description": "The role of the user (e.g., administrator, manager, user)",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "User details updated successfully"
+                    },
+                    "400": {
+                        "description": "Bad request, validation failed"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "users"
+                ],
+                "summary": "Delete a user",
+                "description": "Endpoint to delete a user by ID.",
+                "operationId": "8813fccf55a87ec7b1237ecdee00419f",
+                "parameters": [
+                    {
+                        "name": "user_id",
+                        "in": "path",
+                        "description": "ID of the user to delete",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "user deleted successfully"
+                    },
+                    "404": {
+                        "description": "user not found"
+                    }
+                }
+            }
+        }
+    }
+}
